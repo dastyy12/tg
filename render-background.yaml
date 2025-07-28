@@ -1,0 +1,14 @@
+services:
+  - type: worker
+    name: hydra-bot-worker
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot_worker.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        value: "-4827638107"
+      - key: PYTHON_VERSION
+        value: "3.11" 
